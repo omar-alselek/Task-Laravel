@@ -16,7 +16,6 @@ A robust RESTful API for user management built with Laravel 12, featuring JWT au
 - [Authorization](#authorization)
 - [Validation Rules](#validation-rules)
 - [Testing](#testing)
-- [Project Structure](#project-structure)
 
 ## 🎯 Project Overview
 
@@ -554,44 +553,7 @@ curl -X DELETE http://localhost:8000/api/users/1 \
 2. Set up environment variables for `base_url` and `token`
 3. Use the "Authorization" tab to set Bearer token for protected endpoints
 
-## 📁 Project Structure
 
-```
-omar-laravel/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   └── API/
-│   │   │       ├── AuthController.php      # Authentication logic
-│   │   │       └── UserController.php      # User management logic
-│   │   ├── Middleware/
-│   │   │   └── AdminMiddleware.php         # Admin-only middleware
-│   │   ├── Requests/
-│   │   │   ├── RegisterRequest.php         # Registration validation
-│   │   │   ├── LoginRequest.php            # Login validation
-│   │   │   └── UpdateUserRequest.php       # Update user validation
-│   │   └── Resources/
-│   │       └── UserResource.php            # User API resource
-│   ├── Models/
-│   │   ├── User.php                        # User model with JWT
-│   │   └── Role.php                        # Role model
-│   └── Providers/
-│       └── AppServiceProvider.php          # Gates definition
-├── database/
-│   ├── migrations/
-│   │   ├── 0001_01_01_000000_create_users_table.php
-│   │   ├── 2025_12_04_211340_create_roles_table.php
-│   │   └── 2025_12_04_211342_add_role_id_to_users_table.php
-│   └── seeders/
-│       ├── DatabaseSeeder.php
-│       └── RoleSeeder.php                  # Roles seeder
-├── routes/
-│   └── api.php                             # API routes
-├── config/
-│   ├── auth.php                            # Authentication config
-│   └── jwt.php                             # JWT config
-└── README.md
-```
 
 ## 🔧 Troubleshooting
 
@@ -621,18 +583,8 @@ Verify your `.env` file has correct database credentials and the database exists
 - Check that the token hasn't expired
 - Verify the token format: `Bearer {token}` (with space after Bearer)
 
-## 📝 Notes
 
-- New users are automatically assigned the "User" role upon registration
-- Password complexity requires at least one uppercase letter and one number
-- The last Admin account cannot be deleted
-- All timestamps are in UTC format
-
-## 📄 License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-## 👨‍💻 Development
+##  Development
 
 Built with  using Laravel 12
 
